@@ -1,0 +1,126 @@
+/* Dark Mode Stylesheet */
+
+/* 
+    Selettore tema scuro.
+    Usiamo queste variabili per ridefinire i colori del tema base (johndoe.css) 
+*/
+[data-theme="dark"] {
+    /* Background colors */
+    --bg-color: #121212 !important;
+    --bg-custom-gray: #1e1e1e !important;
+    --card-bg: #242424 !important;
+    --nav-bg: #1f1f1f !important;
+
+    /* Text colors */
+    --text-color: #e0e0e0 !important;
+    --text-muted: #aaaaaa !important;
+    --subtitle-color: #aaaaaa !important;
+    --header-title: #f8f9fa !important;
+
+    /* Borders */
+    --border-color: #333333 !important;
+}
+
+/* Modifiche esplicite basate sul tema scuro */
+
+[data-theme="dark"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: var(--nav-bg) !important;
+}
+
+[data-theme="dark"] .bg-custom-gray {
+    background-color: var(--bg-custom-gray) !important;
+}
+
+[data-theme="dark"] .bg-dark {
+    background-color: #0c0c0c !important; /* Lievemente più scuro del default bs-dark se serve, o possiamo lasciarlo intatto */
+}
+
+/* Testi generalizzati */
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h5, 
+[data-theme="dark"] h6 {
+    color: var(--header-title) !important;
+}
+
+[data-theme="dark"] .text-dark {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] p {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .subtitle {
+    color: var(--subtitle-color) !important;
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar {
+    background-color: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+[data-theme="dark"] .navbar .nav-link {
+    color: var(--text-color) !important;
+}
+[data-theme="dark"] .navbar .nav-link:hover, 
+[data-theme="dark"] .navbar .nav-link.active {
+    color: #dc3545 !important; /* Manteniamo il rosso del text-danger */
+}
+[data-theme="dark"] .navbar-brand, 
+[data-theme="dark"] .brand-title, 
+[data-theme="dark"] .brand-subtitle {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Cards */
+[data-theme="dark"] .card, 
+[data-theme="dark"] .price-card, 
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .about-card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .card-header {
+    background-color: var(--card-bg) !important;
+    border-bottom-color: var(--border-color) !important;
+}
+
+/* Lists and details */
+[data-theme="dark"] .list-item {
+    color: var(--text-color) !important;
+}
+
+/* Theme Toggle Button Fix per Dark Mode */
+[data-theme="dark"] #theme-toggle {
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+[data-theme="dark"] #theme-toggle:hover {
+    background-color: #333333 !important;
+}
+
+/* Personal Info Fix */
+[data-theme="dark"] .info {
+    color: var(--text-muted) !important;
+}
+[data-theme="dark"] .info li span {
+    color: var(--text-color) !important;
+    font-weight: bold;
+}
