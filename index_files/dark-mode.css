@@ -124,3 +124,31 @@
     color: var(--text-color) !important;
     font-weight: bold;
 }
+
+/* UX: Pasticche/Modali/Backgrounds */
+[data-theme="dark"] .badge-dark {
+    background-color: #333 !important;
+    color: #e0e0e0 !important;
+}
+[data-theme="dark"] .badge-danger {
+    background-color: #bb2d3b !important;
+    color: #fff !important;
+}
+[data-theme="dark"] .badge-outline-danger {
+    color: #e66b77 !important;
+    border-color: #bb2d3b !important;
+}
+
+/* UX: Hover Animations for Cards (Light & Dark) */
+.card, .portfolio-item, .price-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover, .portfolio-item:hover, .price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+[data-theme="dark"] .card:hover, 
+[data-theme="dark"] .portfolio-item:hover, 
+[data-theme="dark"] .price-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
