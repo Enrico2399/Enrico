@@ -1,0 +1,418 @@
+/* Override del tema JohnDoe: struttura, mobile e stampa. I colori dei temi stanno in dark-mode.css */
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  word-break: break-word;
+}
+
+/* accessibilità: link "salta al contenuto" e focus visibile */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 2000;
+  padding: 8px 16px;
+  background: #F85C70;
+  color: #fff;
+  border-radius: 4px;
+  transition: top .2s;
+}
+
+.skip-link:focus {
+  top: 16px;
+  color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid #F85C70;
+  outline-offset: 2px;
+}
+
+/* header: immagine webp (1,2 MB jpg -> 140 KB) e call to action */
+.header {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.webp);
+}
+
+.header .header-content .header-subtitle,
+.header .header-content .header-mono {
+  color: #fff;
+}
+
+.header-status {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 15px;
+}
+
+.status-dot {
+  display: inline-block;
+  vertical-align: middle;
+  width: 9px;
+  height: 9px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #2ecc71;
+  box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.25);
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* navbar: brand compatto visibile solo sotto i 992px */
+.navbar-brand-mobile {
+  display: flex;
+  align-items: center;
+  color: #212529;
+  font-weight: bold;
+  font-family: "Dosis", "Open Sans", sans-serif;
+  text-decoration: none;
+}
+
+.navbar-brand-mobile:hover {
+  color: #F85C70;
+  text-decoration: none;
+}
+
+.navbar-brand-mobile img {
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid #F85C70;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.theme-toggle:hover {
+  background: rgba(248, 92, 112, 0.12);
+}
+
+.section-lead {
+  color: #6c757d;
+}
+
+/* portfolio senza isotope: griglia Bootstrap normale */
+.portfolio .portfolio-container .portfolio-item {
+  margin: 10px 0;
+}
+
+.portfolio .portfolio-container .portfolio-item a {
+  display: block;
+  text-decoration: none;
+}
+
+.portfolio .portfolio-container .portfolio-item img {
+  object-fit: cover;
+}
+
+.portfolio .portfolio-container .portfolio-item .content-holder .title {
+  color: #fff;
+}
+
+.modal-banner {
+  max-height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* skill e stack */
+.skill-badge {
+  margin: 4px;
+  padding: 7px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: normal;
+  text-align: left;
+}
+
+.badge-outline-danger {
+  color: #F85C70;
+  border: 1px solid #F85C70;
+  background: transparent;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tags li {
+  padding: 2px 10px;
+  border: 1px solid #F85C70;
+  border-radius: 100px;
+  color: #F85C70;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* numeri */
+.font40 {
+  font-size: 40px;
+}
+
+.stat-num {
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+/* contatti */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-note {
+  opacity: .8;
+}
+
+.about-section .info li {
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .border-md-right {
+    border-right: 1px solid #dee2e6;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    padding: 10px 0;
+  }
+  .navbar .navbar-nav .nav-item .nav-link {
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  }
+  .navbar .navbar-nav:last-child .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+  .about-section .about-card {
+    padding: 40px 30px;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+  .about-section .about-card:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* background-attachment: fixed non funziona su iOS e rallenta lo scroll */
+  .header {
+    background-attachment: scroll;
+    height: auto;
+    min-height: 100svh;
+  }
+  .header .header-content {
+    position: relative;
+    top: auto;
+    transform: none;
+    padding: 110px 0 60px;
+  }
+  .header .header-content .header-title {
+    line-height: 1.05;
+    margin-bottom: 15px;
+  }
+  .header .header-content .header-mono {
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .header-status {
+    font-size: 14px;
+  }
+  .header-actions .btn {
+    flex: 1 1 100%;
+  }
+  .section {
+    padding: 50px 0;
+  }
+  .about-section .about-card {
+    padding: 35px 20px;
+  }
+  .stats-section .icon-xl {
+    font-size: 32px;
+  }
+  .stats-section .font40 {
+    font-size: 30px;
+  }
+  .price-card .price-card-title {
+    font-size: 24px;
+  }
+  .price-card .price-card-cost .num {
+    font-size: 44px;
+  }
+  .blog-card {
+    margin: 0 0 30px;
+  }
+  .blog-card .content-holder {
+    padding: 20px;
+  }
+  .blog-card .content-holder .title {
+    font-size: 20px;
+  }
+  .contact-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* stampa: CV leggibile su carta, sempre in chiaro e senza parti interattive */
+@media print {
+  .navbar, .skip-link, .header-actions, .download-cv-button, .stats-section,
+  #portfolio, #price, #service, .contact-actions, .modal, .read-more {
+    display: none !important;
+  }
+  .header {
+    height: auto;
+    min-height: 0;
+    background: none !important;
+    color: #000 !important;
+  }
+  .header .header-content {
+    position: static;
+    transform: none;
+    padding: 0;
+    color: #000 !important;
+  }
+  .header .header-content .header-subtitle,
+  .header .header-content .header-mono {
+    color: #000 !important;
+  }
+  .header-status {
+    background: none;
+    padding: 0;
+  }
+  .section {
+    padding: 20px 0;
+  }
+  .card, .blog-card {
+    break-inside: avoid;
+  }
+}
+
+/* link ai servizi su nordev.dev */
+.service-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #F85C70;
+}
+
+.modal-footer {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal-footer > * {
+  margin: 0;
+}
+
+/* banda "Contatta il mio team": immagini e logo di nordev.dev, versione chiara/scura come sul loro sito */
+.team-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  min-height: 150px;
+  margin: 0 auto 30px;
+  padding: 24px 32px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 141, 199, 0.45);
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(240, 245, 249, 0.96) 0%, rgba(240, 245, 249, 0.85) 45%, rgba(240, 245, 249, 0) 75%),
+              url(nordev/nordev-contatti-light.webp) right center / cover no-repeat;
+  text-decoration: none !important;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.team-banner:hover {
+  border-color: #108dc7;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(16, 141, 199, 0.18);
+}
+
+.team-banner-logo {
+  flex: 0 0 auto;
+  width: 52px;
+  height: auto;
+}
+
+.team-banner-text {
+  display: flex;
+  flex-direction: column;
+  color: #0b1f2c;
+}
+
+.team-banner-text strong {
+  font-size: 1.2rem;
+}
+
+.team-banner-text span {
+  color: #3c5566;
+}
+
+.team-banner-text b {
+  color: #108dc7;
+}
+
+.team-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 22px;
+  border-radius: 100px;
+  background: #108dc7;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color .2s;
+}
+
+.team-banner:hover .team-banner-cta {
+  background: #095d82;
+}
+
+@media (max-width: 767.98px) {
+  .team-banner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 24px 20px;
+    background: linear-gradient(180deg, rgba(240, 245, 249, 0.95) 0%, rgba(240, 245, 249, 0.82) 100%),
+                url(nordev/nordev-contatti-light.webp) 70% center / cover no-repeat;
+  }
+}

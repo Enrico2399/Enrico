@@ -1,0 +1,240 @@
+/* Dark Mode Stylesheet
+   Il tema scuro è quello di default: lo script nel <head> imposta data-theme="dark"
+   a meno che il visitatore non abbia scelto il chiaro (salvato in localStorage).
+   Le regole valgono solo a schermo: in stampa resta sempre il tema chiaro. */
+
+:root {
+    --bg-color: #ffffff;
+    --bg-custom-gray: #f8f9fb;
+    --card-bg: #ffffff;
+    --nav-bg: #ffffff;
+    --text-color: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+}
+
+@media screen {
+    [data-theme="dark"] {
+        color-scheme: dark;
+
+        /* Background colors */
+        --bg-color: #121212;
+        --bg-custom-gray: #181818;
+        --card-bg: #1f1f1f;
+        --nav-bg: #1a1a1a;
+
+        /* Text colors */
+        --text-color: #e6e6e6;
+        --text-muted: #a9a9a9;
+        --header-title: #f8f9fa;
+        --link-color: #ff8a9a;
+
+        /* Borders */
+        --border-color: #333333;
+    }
+
+    [data-theme="dark"] body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    [data-theme="dark"] a:not(.btn) {
+        color: var(--link-color);
+    }
+
+    [data-theme="dark"] .bg-white {
+        background-color: var(--nav-bg) !important;
+    }
+
+    [data-theme="dark"] .bg-custom-gray {
+        background-color: var(--bg-custom-gray) !important;
+    }
+
+    [data-theme="dark"] .bg-dark {
+        background-color: #0c0c0c !important;
+    }
+
+    /* Testi */
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6 {
+        color: var(--header-title);
+    }
+
+    [data-theme="dark"] .text-danger {
+        color: #ff6b7f !important;
+    }
+
+    [data-theme="dark"] .text-dark {
+        color: var(--text-color) !important;
+    }
+
+    [data-theme="dark"] p,
+    [data-theme="dark"] .card .card-body {
+        color: var(--text-muted);
+    }
+
+    [data-theme="dark"] .card-body > p:not(.subtitle) {
+        color: var(--text-color);
+    }
+
+    [data-theme="dark"] .subtitle,
+    [data-theme="dark"] .text-muted,
+    [data-theme="dark"] .section-lead {
+        color: var(--text-muted) !important;
+    }
+
+    [data-theme="dark"] .text-light,
+    [data-theme="dark"] .header p {
+        color: #f8f9fa !important;
+    }
+
+    [data-theme="dark"] .portfolio .content-holder .subtitle {
+        color: #fff !important;
+    }
+
+    [data-theme="dark"] hr {
+        border-top-color: var(--border-color);
+    }
+
+    /* Navbar */
+    [data-theme="dark"] .navbar {
+        background-color: var(--nav-bg) !important;
+        border-bottom: 1px solid var(--border-color);
+    }
+    [data-theme="dark"] .navbar .nav-link,
+    [data-theme="dark"] .navbar-brand-mobile {
+        color: var(--text-color) !important;
+    }
+    [data-theme="dark"] .navbar .nav-link:hover,
+    [data-theme="dark"] .navbar .nav-link.active {
+        color: #ff6b7f !important;
+    }
+    [data-theme="dark"] .brand-title,
+    [data-theme="dark"] .brand-subtitle {
+        color: var(--text-color) !important;
+    }
+    [data-theme="dark"] .navbar .brand .brand-img {
+        border-color: var(--nav-bg);
+    }
+    [data-theme="dark"] .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    [data-theme="dark"] .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    }
+    [data-theme="dark"] .theme-toggle:hover {
+        background-color: #2a2a2a;
+    }
+
+    /* Cards e sezioni */
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .price-card,
+    [data-theme="dark"] .blog-card {
+        background-color: var(--card-bg) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    [data-theme="dark"] .card .card-header.has-icon i {
+        background: var(--card-bg);
+        border-color: var(--card-bg);
+    }
+
+    [data-theme="dark"] .about-section,
+    [data-theme="dark"] .about-section .about-card,
+    [data-theme="dark"] .border-md-right {
+        border-color: var(--border-color) !important;
+    }
+
+    [data-theme="dark"] .list-item {
+        color: var(--text-color) !important;
+    }
+
+    /* Info personali */
+    [data-theme="dark"] .info {
+        color: var(--text-muted) !important;
+    }
+    [data-theme="dark"] .info li span {
+        color: var(--text-color) !important;
+        font-weight: bold;
+    }
+
+    /* Badge */
+    [data-theme="dark"] .badge-dark {
+        background-color: #2e2e2e !important;
+        color: #e6e6e6 !important;
+    }
+    [data-theme="dark"] .badge-danger {
+        background-color: #c9334a !important;
+        color: #fff !important;
+    }
+    [data-theme="dark"] .badge-outline-danger,
+    [data-theme="dark"] .tech-tags li {
+        color: #ff8a9a !important;
+        border-color: #c9334a !important;
+    }
+
+    /* Modali */
+    [data-theme="dark"] .modal-content {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        border-color: var(--border-color);
+    }
+    [data-theme="dark"] .modal-header,
+    [data-theme="dark"] .modal-footer {
+        border-color: var(--border-color);
+    }
+    [data-theme="dark"] .modal-content p {
+        color: var(--text-color);
+    }
+    [data-theme="dark"] .modal .close {
+        color: var(--text-color);
+        text-shadow: none;
+        opacity: .8;
+    }
+
+    [data-theme="dark"] .card:hover,
+    [data-theme="dark"] .portfolio-item:hover,
+    [data-theme="dark"] .price-card:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* UX: animazione al passaggio del mouse sulle card (entrambi i temi) */
+.card, .portfolio-item, .price-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover, .portfolio-item:hover, .price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media screen {
+    [data-theme="dark"] .team-banner {
+        border-color: rgba(16, 141, 199, 0.4);
+        background: linear-gradient(90deg, rgba(7, 19, 28, 0.92) 0%, rgba(7, 19, 28, 0.7) 45%, rgba(7, 19, 28, 0) 75%),
+                    url(nordev/nordev-contatti-dark.webp) right center / cover no-repeat;
+    }
+    [data-theme="dark"] .team-banner-text {
+        color: #f8fafc;
+    }
+    [data-theme="dark"] .team-banner-text span {
+        color: #9fb3c2;
+    }
+    [data-theme="dark"] .team-banner-text b {
+        color: #7ec8e8;
+    }
+    [data-theme="dark"] a.team-banner .team-banner-cta {
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    [data-theme="dark"] .team-banner {
+        background: linear-gradient(180deg, rgba(7, 19, 28, 0.9) 0%, rgba(7, 19, 28, 0.75) 100%),
+                    url(nordev/nordev-contatti-dark.webp) 70% center / cover no-repeat;
+    }
+}
